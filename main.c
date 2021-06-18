@@ -24,7 +24,7 @@ void amcomPacketHandler(const AMCOM_Packet* packet, void* userContext) {
 	case AMCOM_IDENTIFY_REQUEST:
 		printf("Got IDENTIFY.request. Responding with IDENTIFY.response\n");
 		AMCOM_IdentifyResponsePayload identifyResponse;
-		sprintf(identifyResponse.playerName, "MyName%d", playerCounter++);
+		sprintf(identifyResponse.playerName, "GeneralKenobi%d", playerCounter++);
 		bytesToSend = AMCOM_Serialize(AMCOM_IDENTIFY_RESPONSE, &identifyResponse, sizeof(identifyResponse), amcomBuf);
 		break;
 	case AMCOM_NEW_GAME_REQUEST:
